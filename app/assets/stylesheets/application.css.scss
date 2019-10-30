@@ -1,0 +1,438 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.bienvenidaaa {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border-style: double;
+  text-align: center;
+  width: 250px;
+  border-color: #36c3d1
+}
+
+.bienvenidaa {
+  border-style: double;
+  text-align: center;
+  width: 250px;
+  border-color: #36c3d1
+}
+
+.bienvenida {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: double;
+  text-align: center;
+  width: 250px;
+  border-color: #36c3d1
+
+}
+
+.centrar-pagina {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-crea {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid #36c3d1; /* Green */
+  color: #36c3d1;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.titulo{
+  color: #36c3d1;
+  text-align: center;
+}
+
+.titulo-izq{
+  color: #36c3d1;
+}
+
+.contenedor-tot{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.boton-estrella{
+  color: #36c3d1;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid #36c3d1;
+}
+
+.boton-menor{
+  color: #154D52;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid #154D52;
+  padding: 3px;
+}
+
+.titulo-foro{
+  border-left: 10px solid #154D52;
+  color: #154D52;
+  background-color: #DCEBEC;
+  padding: 5px 5px 5px 5px;
+}
+
+.contenedor-post{
+  border-radius: 5px;
+  background-color: #EDFEFF;
+  padding-left: 10px;
+}
+
+.contenedor-comentarios{
+  background-color: white;
+  border-left: 5px solid #154D52;
+  padding: 15px 15px 15px 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.contenedor-c-comentario{
+  border-bottom: 1px;
+}
+
+
+.contenedor-mensajeria{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  width: 600px;
+  height: 400px;
+  border-color: #36c3d1;
+  background-color: #ECF1FA;
+  padding: 10px 10px 10px 10px;
+  overflow-y: scroll;
+}
+
+.mensaje-derecha{
+  display: table;
+  margin-left: auto;
+  margin-right: 0px;
+  padding: 7px;
+  background-color: #bfd6d5;
+  text-align: right;
+  width: auto;
+  max-width: 300px;
+  border-radius: 15px;
+}
+
+.mensaje-izquierda{
+  display: table;
+  padding: 7px;
+  background-color: #FFFF;
+  width: auto;
+  max-width: 300px;
+  border-radius: 15px;
+}
+
+.contenedor-c-mensaje{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  width: 600px;
+}
+
+.contenedor-nombres-mensajes{
+  background-color: #EDFEFF;
+  border-left: 5px solid #154D52;
+  padding: 15px 15px 15px 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.letra-home{
+  padding: 0px;
+  font-size: 16px;
+  color: #ecf0f1;
+}
+
+
+
+$bgDefault   : #36c3d1;
+$bgHighlight : #36c3d1;
+$colDefault  : #ecf0f1;
+$colHighlight: #ffbbbc;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        font-size: 13px;
+        font-weight: bold;
+        &:hover,  &:focus {
+          color: $colHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus, {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+.button-solicitud {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid #36c3d1; /* Green */
+  color: #36c3d1;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 5fr 3fr 1fr 1fr;
+}
+
+.boton-aceptar{
+  background-color: #6ace92;
+  height: 75px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.boton-rechazar{
+  background-color: #ce6a6a;
+  height: 75px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.inner-aceptar{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.boton-verde{
+  color: #6ace92;
+  background-color: #6ace92;
+  border-color: #6ace92;
+  font-size: 40px;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
+boton-verde:hover{
+  background-color: #6ace92;
+}
+
+.boton-rojo{
+  color: #ce6a6a;
+  background-color: #ce6a6a;
+  border-color: #ce6a6a;
+  font-size: 40px;
+  width: 70px;
+  height: 70px;
+  text-align: left;
+}
+
+boton-rojo:hover{
+  background-color: #a05a5a;
+}
+
+.separacion-arriba{
+  margin-top: 20px;
+}
+
+.log-in{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 10px solid #154D52;
+  text-align: center;
+  width: 250px;
+  background-color: #DCEBEC;
+}
+
+
+.button-crea-2 {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid #36c3d1; /* Green */
+  color: #36c3d1;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.log-in a.button-crea-2:hover{
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #36c3d1;
+  border: 2px solid #36c3d1; /* Green */
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 175px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.centrar-cont{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.separacion-arriba-2{
+  margin-top: 75px;
+}
+
+.fondo-dropdown{
+  border-top: 1px solid gray;
+}
+
+
+.button-solicitud-2 {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid #36c3d1; /* Green */
+  color: #36c3d1;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button-perfil{
+  display: inline-block;
+  background-color: white;
+  color: teal;
+  text-align: center;
+  font-size: 13px;
+  padding: 8px;
+  width: 150px;
+  border: 1px solid teal;
+}
+
+.dropdown-edit{
+  border: 0px;
+  font-size: 13px;
+  color: teal;
+}
+
+.log-in-2{
+  border-top: 10px solid #154D52;
+  text-align: center;
+  width: 250px;
+  background-color: #DCEBEC;
+
+}
+
+.centrar-log{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+}
+
+.titulo-3{
+  color: #154D52;
+  text-align: center;
+}
+
+.primero{
+  background-color: #FFE6A1;
+  font-size: 25px;
+}
+
+.segundo{
+  background-color: #E0DEE0;
+  font-size: 20px;
+}
+
+.tercero{
+  background-color: #BF9071;
+  font-size: 15px;
+}
+
+.c-text{
+  text-align: center;
+}
