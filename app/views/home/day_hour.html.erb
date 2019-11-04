@@ -39,9 +39,9 @@
           colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
           days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
           times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
-          datasets = ["data.csv", "data2.csv"];
+          datasets = ["data.csv", "data2.csv", "data3.csv"]; // Aca vamos poniendo todos los archivos.
 
-      var svg = d3.select("#chart").append("svg")
+      var svg = d3.select("#div_template, #chart").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -67,6 +67,41 @@
             .attr("transform", "translate(" + gridSize / 2 + ", -6)")
             .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
 
+       // create a tooltip
+      var Tooltip = d3.select("#div_template")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+
+
+        // Three function that change the tooltip when user hover / move / leave a cell
+      var mouseover = function(d) {
+        Tooltip
+          .style("opacity", 0)
+        d3.select(this)
+          .style("stroke", "black")
+          .style("opacity", 1)
+      }
+      var mousemove = function(d) {
+        Tooltip
+          .html("The exact value of<br>this cell is: " + d.value)
+          .style("left", (d3.mouse(this)[0]+70) + "px")
+          .style("top", (d3.mouse(this)[1]) + "px")
+      }
+      var mouseleave = function(d) {
+        Tooltip
+          .style("opacity", 1)
+        d3.select(this)
+          .style("stroke", "none")
+          .style("opacity", 1)
+      }
+
+
       var heatmapChart = function(csvFile) {
         d3.csv(csvFile,
         function(d) {
@@ -81,7 +116,7 @@
               .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])
               .range(colors);
 
-          var cards = svg.selectAll(".hour")
+          var cards = svg.selectAll(".hour, #div_template")
               .data(data, function(d) {return d.day+':'+d.hour;});
 
           cards.append("title");
@@ -89,17 +124,18 @@
           cards.enter().append("rect")
               .attr("x", function(d) { return (d.hour - 1) * gridSize; })
               .attr("y", function(d) { return (d.day - 1) * gridSize; })
-              .attr("rx", 4)
-              .attr("ry", 4)
+              .attr("rx", 4) // Radio de redondeado de cada cuadrado
+              .attr("ry", 4) // Radio de redondeado de cada cuadrado
               .attr("class", "hour bordered")
               .attr("width", gridSize)
               .attr("height", gridSize)
               .style("fill", colors[0]);
 
+
           cards.transition().duration(1000)
               .style("fill", function(d) { return colorScale(d.value); });
 
-          cards.select("title").text(function(d) { return d.value; });
+          cards.select("title").text(function(d) { return "Nivel de Saturación: " + d.value; }); // Tooltip
           
           cards.exit().remove();
 
