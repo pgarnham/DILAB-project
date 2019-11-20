@@ -32,25 +32,18 @@ for k in range(1, 11):
 							 + log(dict_valores[i-2][j-1]) + log(dict_valores[i][j-2]) 
 							 + log(dict_valores[i-1][j-2]) + log(dict_valores[i-2][j-2])
 							)/8
-				'''
-				aux = 1
-				while aux == 1:
-					valor = lnormal(mean=promedio, sigma=5)
-					if valor <= 60:
-						aux = 0
-					else:
-						valor = 4 
-						aux = 0
-				'''
-				#print('promedio:', promedio)
-				valor = lnormal(mean=promedio, sigma=1)
-				#print('valor:', valor)
+
+
+				
+				valor = lnormal(mean=(promedio), sigma=1)
 				
 				dict_valores[i][j] = valor
 				j_ = j-(i-1)
 				if j_ < 1:
 					j_ += 100
-				text = f"{i},{j_},{str(valor)},{ran_1},{ran_2}\n"
+				delta = + (j_/20)
+				print(delta)
+				text = f"{i},{j_},{str((valor +1) * delta)},{ran_1},{ran_2}\n"
 				file.write(text)
 
 
